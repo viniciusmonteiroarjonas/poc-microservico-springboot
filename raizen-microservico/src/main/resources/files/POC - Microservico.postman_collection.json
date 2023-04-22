@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "9d45c153-6705-4787-b099-acb378c49b99",
+		"name": "POC - Microservico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consulta CEP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/consulta/0527100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consulta",
+						"0527100"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
