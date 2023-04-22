@@ -1,6 +1,6 @@
 package br.com.raizen.client;
 
-import br.com.raizen.domain.dto.ResponseData;
+import br.com.raizen.configuration.FeignConfig;
 import br.com.raizen.domain.dto.cep.ConsultaCepResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @FeignClient(
         url = "${servico.consulta.viacep.url}",
-        name = "ConsultaViaCEP"
+        name = "ConsultaViaCEP",
+        configuration = FeignConfig.class
 )
 public interface ConsultaCepClient {
 

@@ -28,6 +28,7 @@ public class ConsultaCepController {
 
         try {
             ConsultaCepResponse dadosCep = consultaCepService.consultaCep(cep);
+
             if(!Objects.isNull(dadosCep)) {
                 return ResponseEntity.ok().body(new ResponseData<>(dadosCep, null));
             }
