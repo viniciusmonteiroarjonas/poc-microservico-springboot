@@ -2,6 +2,7 @@ package br.com.raizen.controller;
 
 import br.com.raizen.domain.dto.ResponseData;
 import br.com.raizen.domain.dto.cep.ConsultaCepResponse;
+import br.com.raizen.exeption.cep.CepNotFoundExeption;
 import br.com.raizen.service.ConsultaCepService;
 import feign.FeignException;
 import org.slf4j.Logger;
@@ -29,16 +30,16 @@ public class ConsultaCepController {
         try {
             ConsultaCepResponse dadosCep = consultaCepService.consultaCep(cep);
 
-            if(!Objects.isNull(dadosCep)) {
+            if(!Objects.isNull(dadosCep) && dadosCep.getCep() != null) {
                 return ResponseEntity.ok().body(new ResponseData<>(dadosCep, null));
+            } else {
+                throw new CepNotFoundExeption(dadosCep.getCep());
             }
-        } catch (FeignException.FeignClientException error) {
-            logger.error("FeignExeception -> " + error.getMessage());
-            throw new RuntimeException(error.getMessage());
+        } catch (Exception error) {
+            logger.error("Exception -> " + error.getMessage());
+            throw new CepNotFoundExeption(cep);
+//            throw new RuntimeException(error.getMessage());
         }
-
-        return ResponseEntity.noContent().build();
-
     }
 
 
