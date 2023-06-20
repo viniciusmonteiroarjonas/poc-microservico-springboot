@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-visa
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_USER: visa
+      MYSQL_PASSWORD: visa
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: visa
+
