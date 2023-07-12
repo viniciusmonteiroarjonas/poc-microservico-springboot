@@ -19,10 +19,10 @@ public class Client {
     @Type(type = "uuid-char")
     private UUID id;
 
-    @Column(name = "NOME", nullable = false, length = 100)
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name = "EMAIL", nullable = false, length = 100)
+    @Column(name = "email")
     private String email;
 
 }
