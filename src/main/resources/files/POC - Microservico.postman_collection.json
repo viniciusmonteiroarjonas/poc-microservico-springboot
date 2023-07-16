@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"document\": \"40948286806\" \n}",
+					"raw": "{\n    \"document\": \"\" \n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,6 +29,35 @@
 					"port": "8080",
 					"path": [
 						"campanhas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Daiane Rocha\",\n    \"email\": \"daiane@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/campanhas/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"campanhas",
+						"clientes"
 					]
 				}
 			},
